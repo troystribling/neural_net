@@ -1,0 +1,29 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.8	//
+ThreeLayerNetwork	neural_net/three_layer_network.py	/^class ThreeLayerNetwork(object):$/;"	c
+ThreeLayerNetwork	notebooks/three_layer_network_notebook.py	/^from neural_net.three_layer_network import ThreeLayerNetwork$/;"	i
+__init__	neural_net/three_layer_network.py	/^    def __init__(self, in_nodes, out_nodes, hidden_nodes):$/;"	m	class:ThreeLayerNetwork
+activation_function	neural_net/three_layer_network.py	/^    def activation_function(self, x):$/;"	m	class:ThreeLayerNetwork
+hidden_in	notebooks/three_layer_network_notebook.py	/^hidden_in = numpy.dot(weights_hidden, inputs)$/;"	v
+hidden_out	notebooks/three_layer_network_notebook.py	/^hidden_out = scipy.special.expit(hidden_in)$/;"	v
+inputs	notebooks/three_layer_network_notebook.py	/^inputs = numpy.array([2.0, 1.0])$/;"	v
+layer_out	neural_net/three_layer_network.py	/^    def layer_out(self, weights, inputs):$/;"	m	class:ThreeLayerNetwork
+net	notebooks/three_layer_network_notebook.py	/^net = ThreeLayerNetwork(2, 2, 2)$/;"	v
+numpy	neural_net/three_layer_network.py	/^import numpy$/;"	i
+numpy	notebooks/three_layer_network_notebook.py	/^%aimport numpy$/;"	i
+os	notebooks/three_layer_network_notebook.py	/^%aimport os$/;"	i
+query	neural_net/three_layer_network.py	/^    def query(self, inputs):$/;"	m	class:ThreeLayerNetwork
+result_in	notebooks/three_layer_network_notebook.py	/^result_in = numpy.dot(weights_out, hidden_out)$/;"	v
+result_out	notebooks/three_layer_network_notebook.py	/^result_out = scipy.special.expit(result_in)$/;"	v
+scipy	neural_net/three_layer_network.py	/^import scipy.special$/;"	i
+scipy	notebooks/three_layer_network_notebook.py	/^%aimport scipy.special$/;"	i
+special	neural_net/three_layer_network.py	/^import scipy.special$/;"	i
+special	notebooks/three_layer_network_notebook.py	/^%aimport scipy.special$/;"	i
+tempfile	notebooks/three_layer_network_notebook.py	/^%aimport tempfile$/;"	i
+train	neural_net/three_layer_network.py	/^    def train(self, learning_rate, inputs, targets):$/;"	m	class:ThreeLayerNetwork
+weights_hidden	notebooks/three_layer_network_notebook.py	/^weights_hidden = numpy.random.normal(0, pow(2, -0.5), (2, 2))$/;"	v
+weights_out	notebooks/three_layer_network_notebook.py	/^weights_out = numpy.random.normal(0, 1.0, (2, 2))$/;"	v
