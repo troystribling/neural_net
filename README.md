@@ -25,7 +25,7 @@ pyenv install 3.6.1
 ```
 
 ## Install Xcode Command Line Tools
-
+Markf
 If the python build fails because of missing libraries install Xcode command line tools and try again.
 
 ```
@@ -54,3 +54,10 @@ pip install -r requirements.txt
 ## Start Editing
 
 If ```atom``` is used start from the command line in the project directory to be sure the virtual environment is recognized during the editing session.
+
+
+### The MNIST Dataset of Handwritten Numbers
+
+> [Training data](http://www.pjreddie.com/media/files/mnist_train.csv)
+>
+> [Test data](http://www.pjreddie.com/media/files/mnist_test.csv)

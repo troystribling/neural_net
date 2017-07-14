@@ -1,3 +1,5 @@
 .DS_Store
 __pycache__/
 *.pyc
+large_data/*
+!large_data/.gitkeep 
