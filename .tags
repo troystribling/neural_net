@@ -6,8 +6,11 @@
 !_TAG_PROGRAM_VERSION	5.8	//
 ThreeLayerNetwork	neural_net/three_layer_network.py	/^class ThreeLayerNetwork(object):$/;"	c
 ThreeLayerNetwork	notebooks/three_layer_network_notebook.py	/^from neural_net.three_layer_network import ThreeLayerNetwork$/;"	i
+__all__	neural_net/__init__.py	/^__all__ = ["import_data", "three_layer_network", "plots"]$/;"	v
 __init__	neural_net/three_layer_network.py	/^    def __init__(self, in_nodes, result_nodes, hidden_nodes, learning_rate):$/;"	m	class:ThreeLayerNetwork
 activation_function	neural_net/three_layer_network.py	/^    def activation_function(self, x):$/;"	m	class:ThreeLayerNetwork
+column_vector	notebooks/linear_algebra.py	/^column_vector = numpy.array(row_vector, ndmin=2).T$/;"	v
+count_success	notebooks/three_layer_network_notebook.py	/^def count_success(results, answeres):$/;"	f
 data_path	notebooks/three_layer_network_notebook.py	/^data_path = os.path.join(os.getcwd(), 'data')$/;"	v
 delta_hidden_weights	notebooks/three_layer_network_notebook.py	/^delta_hidden_weights = test_network.delta_weights(hidden_errors, test_input, hidden_out)$/;"	v
 delta_result_weights	notebooks/three_layer_network_notebook.py	/^delta_result_weights = test_network.delta_weights(result_errors, hidden_out, result_out)$/;"	v
@@ -17,39 +20,47 @@ errors_output	neural_net/three_layer_network.py	/^    def errors_output(self, ta
 hidden_errors	notebooks/three_layer_network_notebook.py	/^hidden_errors = test_network.errors_hidden(result_errors)$/;"	v
 hidden_in	notebooks/three_layer_network_notebook.py	/^hidden_in = numpy.dot(weights_hidden, inputs)$/;"	v
 hidden_out	notebooks/three_layer_network_notebook.py	/^hidden_out = scipy.special.expit(hidden_in)$/;"	v
-hidden_out	notebooks/three_layer_network_notebook.py	/^hidden_out = test_network.hidden_output(test_input)$/;"	v
+hidden_out	notebooks/three_layer_network_notebook.py	/^hidden_out = test_network.hidden_output(test_inputs)$/;"	v
 hidden_output	neural_net/three_layer_network.py	/^    def hidden_output(self, inputs):$/;"	m	class:ThreeLayerNetwork
 hidden_weights	notebooks/three_layer_network_notebook.py	/^hidden_weights = test_network.hidden_weights$/;"	v
 import_data	notebooks/three_layer_network_notebook.py	/^from neural_net import import_data$/;"	i
-inputs	notebooks/three_layer_network_notebook.py	/^inputs = numpy.array([2.0, 1.0])$/;"	v
-inputs_transpose	notebooks/three_layer_network_notebook.py	/^inputs_transpose = inputs.reshape((2, 1))$/;"	v
+inputs	notebooks/three_layer_network_notebook.py	/^inputs = numpy.array(inputs_list, ndmin=2).T$/;"	v
+inputs_list	notebooks/three_layer_network_notebook.py	/^inputs_list = numpy.array([2.0, 3.0])$/;"	v
 large_data_path	notebooks/three_layer_network_notebook.py	/^large_data_path = os.path.join(os.getcwd(), 'large_data')$/;"	v
 network	notebooks/three_layer_network_notebook.py	/^network = ThreeLayerNetwork(784, 10, 100, 0.3)$/;"	v
 numpy	neural_net/import_data.py	/^import numpy$/;"	i
 numpy	neural_net/three_layer_network.py	/^import numpy$/;"	i
+numpy	notebooks/linear_algebra.py	/^%aimport numpy$/;"	i
 numpy	notebooks/three_layer_network_notebook.py	/^%aimport numpy$/;"	i
 os	notebooks/three_layer_network_notebook.py	/^%aimport os$/;"	i
-query	neural_net/three_layer_network.py	/^    def query(self, inputs):$/;"	m	class:ThreeLayerNetwork
+query	neural_net/three_layer_network.py	/^    def query(self, inputs_list):$/;"	m	class:ThreeLayerNetwork
 read_csv_file	neural_net/import_data.py	/^def read_csv_file(file_name):$/;"	f
 read_file	neural_net/import_data.py	/^def read_file(file_name):$/;"	f
 read_mnist_file	neural_net/import_data.py	/^def read_mnist_file(file_name):$/;"	f
-result_errors	notebooks/three_layer_network_notebook.py	/^result_errors = test_network.errors_output(test_target, result_out)$/;"	v
+result_errors	notebooks/three_layer_network_notebook.py	/^result_errors = test_network.errors_output(test_targets, result_out)$/;"	v
 result_in	notebooks/three_layer_network_notebook.py	/^result_in = numpy.dot(weights_out, hidden_out)$/;"	v
 result_out	notebooks/three_layer_network_notebook.py	/^result_out = scipy.special.expit(result_in)$/;"	v
 result_out	notebooks/three_layer_network_notebook.py	/^result_out = test_network.result_output(hidden_out)$/;"	v
 result_output	neural_net/three_layer_network.py	/^    def result_output(self, inputs):$/;"	m	class:ThreeLayerNetwork
 result_weights	notebooks/three_layer_network_notebook.py	/^result_weights = test_network.result_weights$/;"	v
+row_vector	notebooks/linear_algebra.py	/^row_vector = numpy.array([2, 3])$/;"	v
 scipy	neural_net/three_layer_network.py	/^import scipy.special$/;"	i
 scipy	notebooks/three_layer_network_notebook.py	/^%aimport scipy.special$/;"	i
 seaborn	notebooks/three_layer_network_notebook.py	/^%aimport seaborn$/;"	i
 special	neural_net/three_layer_network.py	/^import scipy.special$/;"	i
 special	notebooks/three_layer_network_notebook.py	/^%aimport scipy.special$/;"	i
-tempfile	notebooks/three_layer_network_notebook.py	/^%aimport tempfile$/;"	i
-test_input	notebooks/three_layer_network_notebook.py	/^test_input = numpy.array([0.01, 0.99, 0.01])$/;"	v
+square_matrix	notebooks/linear_algebra.py	/^square_matrix = numpy.array([[1, 2],$/;"	v
+square_matrix_transpose	notebooks/linear_algebra.py	/^square_matrix_transpose = square_matrix.T$/;"	v
+success	notebooks/three_layer_network_notebook.py	/^success = count_success(test_results, test_numbers)$/;"	v
+test_inputs	notebooks/three_layer_network_notebook.py	/^test_inputs = numpy.array([0.01, 0.99, 0.01], ndmin=2).T$/;"	v
 test_network	notebooks/three_layer_network_notebook.py	/^test_network = ThreeLayerNetwork(3, 2, 2, 0.3)$/;"	v
-test_target	notebooks/three_layer_network_notebook.py	/^test_target = numpy.array([0.5, 0.5])$/;"	v
-train	neural_net/three_layer_network.py	/^    def train(self, inputs, targets):$/;"	m	class:ThreeLayerNetwork
+test_results	notebooks/three_layer_network_notebook.py	/^test_results = [network.query(test_number_image) for test_number_image in test_number_images]$/;"	v
+test_results	notebooks/three_layer_network_notebook.py	/^test_results = [untrained_network.query(test_number_image) for test_number_image in test_number_images]$/;"	v
+test_run	notebooks/three_layer_network_notebook.py	/^test_run = 6600$/;"	v
+test_targets	notebooks/three_layer_network_notebook.py	/^test_targets = numpy.array([0.5, 0.5], ndmin=2).T$/;"	v
+train	neural_net/three_layer_network.py	/^    def train(self, inputs_list, targets_lits):$/;"	m	class:ThreeLayerNetwork
 train_network	neural_net/__init__.py	/^def train_network(network, input_data, target_data):$/;"	f
 train_network	notebooks/three_layer_network_notebook.py	/^from neural_net import train_network$/;"	i
+untrained_network	notebooks/three_layer_network_notebook.py	/^untrained_network = ThreeLayerNetwork(784, 10, 100, 0.3)$/;"	v
 weights_hidden	notebooks/three_layer_network_notebook.py	/^weights_hidden = numpy.random.normal(0, pow(2, -0.5), (2, 2))$/;"	v
 weights_out	notebooks/three_layer_network_notebook.py	/^weights_out = numpy.random.normal(0, 1.0, (2, 2))$/;"	v

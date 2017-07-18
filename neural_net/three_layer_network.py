@@ -11,7 +11,9 @@ class ThreeLayerNetwork(object):
         self.hidden_weights = numpy.random.normal(0, pow(hidden_nodes, -0.5), (hidden_nodes, in_nodes))
         self.result_weights = numpy.random.normal(0, pow(result_nodes, -0.5), (result_nodes, hidden_nodes))
 
-    def train(self, inputs, targets):
+    def train(self, inputs_list, targets_lits):
+        inputs = numpy.array(inputs_list, ndmin=2).T
+        targets = numpy.array(targets_lits, ndmin=2).T
         hidden_out = self.hidden_output(inputs)
         result_out = self.result_output(hidden_out)
         result_errors = self.errors_output(targets, result_out)
@@ -26,11 +28,13 @@ class ThreeLayerNetwork(object):
         return numpy.dot(self.result_weights.T, result_errors)
 
     def delta_weights(self, errors, inputs, outputs):
-        return self.learning_rate * errors * (outputs * (1.0 - outputs)) * inputs.reshape((len(inputs), 1))
+        delta = errors * (outputs * (1.0 - outputs))
+        return self.learning_rate * numpy.dot(delta, numpy.transpose(inputs))
 
-    def query(self, inputs):
-        hidden_out = self.layer_out(self.hidden_weights, inputs)
-        return self.layer_out(self.result_weights, hidden_out)
+    def query(self, inputs_list):
+        inputs = numpy.array(inputs_list, ndmin=2).T
+        hidden_out = self.hidden_output(inputs)
+        return self.result_output(hidden_out)
 
     def hidden_output(self, inputs):
         layer_in = numpy.dot(self.hidden_weights, inputs)
