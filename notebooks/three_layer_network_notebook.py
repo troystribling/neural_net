@@ -62,13 +62,11 @@ delta_hidden_weights = test_network.delta_weights(hidden_errors, test_input, hid
 # %%
 # Test with one trial neywork on MINST handwritting data
 (train_numbers, train_number_images) = import_data.read_mnist_file(os.path.join(large_data_path, 'mnist_train.csv'))
-network = ThreeLayerNetwork(784, 10, 100, 0.3)
-seaborn.heatmap(train_number_images[8].reshape((28, 28)), cmap='Greys')
-network.query(train_number_images[8])
+network = ThreeLayerNetwork(784, 10, 200, 0.2)
 
 # %%
 # Train over all data
-train_network(network, train_number_images, train_numbers)
+train_network(network, train_number_images, train_numbers, epocs=3)
 
 # %%
 # Compare with test data

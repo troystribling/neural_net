@@ -29,7 +29,7 @@ class ThreeLayerNetwork(object):
 
     def delta_weights(self, errors, inputs, outputs):
         delta = errors * (outputs * (1.0 - outputs))
-        return self.learning_rate * numpy.dot(delta, numpy.transpose(inputs))
+        return self.learning_rate * numpy.dot(delta, inputs.T)
 
     def query(self, inputs_list):
         inputs = numpy.array(inputs_list, ndmin=2).T
