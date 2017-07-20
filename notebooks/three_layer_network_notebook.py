@@ -15,12 +15,23 @@ from neural_net import train_network
 large_data_path = os.path.join(os.getcwd(), 'large_data')
 data_path = os.path.join(os.getcwd(), 'data')
 
-def count_success(results, answeres):
+# %%
+def count_success(results, answers):
     hits = 0
     for i in range(len(results)):
-        if numpy.argmax(results[i]) == numpy.argmax(answeres[i]):
+        if numpy.argmax(results[i]) == numpy.argmax(answers[i]):
             hits += 1
     return hits
+
+def mnist_target(value):
+    target = numpy.full((10), 0.01, dtype=float)
+    target[value] = 0.99
+    return target
+
+def reverse_query(network, value):
+    targets= mnist_target(value)
+    inputs = network.reverse_query(targets)
+    seaborn.heatmap(inputs.reshape((28, 28)), cmap='Greys')
 
 # %%
 # Basic operations fro 3 layer network
@@ -60,7 +71,7 @@ delta_result_weights = test_network.delta_weights(result_errors, hidden_out, res
 delta_hidden_weights = test_network.delta_weights(hidden_errors, test_input, hidden_out)
 
 # %%
-# Test with one trial neywork on MINST handwritting data
+# Train on MINST handwritting data
 (train_numbers, train_number_images) = import_data.read_mnist_file(os.path.join(large_data_path, 'mnist_train.csv'))
 network = ThreeLayerNetwork(784, 10, 200, 0.2)
 
@@ -74,6 +85,37 @@ train_network(network, train_number_images, train_numbers, epocs=3)
 test_results = [network.query(test_number_image) for test_number_image in test_number_images]
 success = count_success(test_results, test_numbers)
 100.*success/len(test_results)
+
+# %%
+# Look at reverse queries
+reverse_query(network, 0)
+
+# %%
+reverse_query(network, 1)
+
+# %%
+reverse_query(network, 2)
+
+# %%
+reverse_query(network, 3)
+
+# %%
+reverse_query(network, 4)
+
+# %%
+reverse_query(network, 5)
+
+# %%
+reverse_query(network, 6)
+
+# %%
+reverse_query(network, 7)
+
+# %%
+reverse_query(network, 8)
+
+# %%
+reverse_query(network, 9)
 
 # %%
 # Compare with untrained random network

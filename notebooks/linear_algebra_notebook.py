@@ -45,7 +45,6 @@ square_matrix = numpy.array([[1, 2],
                              [3, 4]])
 square_matrix_transpose = square_matrix.T
 
-numpy.transpose(square_matrix)
 square_matrix * square_matrix_transpose
 square_matrix_transpose * square_matrix
 
