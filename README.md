@@ -5,8 +5,6 @@ brew install pyenv
 brew install pyenv-virtualenv
 ```
 
-## Install CUDA
-
 ## Initialize pyenv and pyenv-virtualenv
 
 Add the following to .zshrc

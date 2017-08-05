@@ -68,7 +68,7 @@ result_out = test_network.result_output(hidden_out)
 result_errors = test_network.errors_output(test_targets, result_out)
 hidden_errors = test_network.errors_hidden(result_errors)
 delta_result_weights = test_network.delta_weights(result_errors, hidden_out, result_out)
-delta_hidden_weights = test_network.delta_weights(hidden_errors, test_input, hidden_out)
+delta_hidden_weights = test_network.delta_weights(hidden_errors, test_inputs, hidden_out)
 
 # %%
 # Train on MINST handwritting data
